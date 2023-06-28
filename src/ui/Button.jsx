@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Loading } from "../ui";
 
 const ButtonStyled = styled.button`
   border: none;
@@ -28,7 +29,7 @@ const ButtonStyled = styled.button`
 function Button({ loading, ...rest }) {
   return (
     <ButtonStyled disabled={loading} {...rest}>
-      {loading ? "Loading" : rest.children}
+      {loading ? <Loading /> : rest.children}
     </ButtonStyled>
   );
 }

@@ -4,22 +4,35 @@ import "firebase/compat/firestore";
 import { Button, Message, Field, Modal } from "../ui/index";
 import { ToasterContext } from "../context/ToasterContext";
 
-function AssignmentForm({ assignment, setAssignment }) {
-  const db = firebase.firestore();
+function AssignmentForm() {
+  // const db = firebase.firestore(); OBS! NOT NEEDED SINCE USING ONCE.
 
   const [loading, setLoading] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [error, setError] = useState(null);
 
+  const [assignment, setAssignment] = useState({
+    companyName: "",
+    companyContact: "",
+    companyPhone: "",
+    pickupAdress: "",
+    dropoffAdress: "",
+    pickupDate: "",
+    carReg: "",
+  });
+
   const onSubmit = async (addToast, e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const docRef = await db.collection("assignments").add({
-        ...assignment,
-        pickupDate: new Date(assignment.pickupDate),
-        companyPhone: parseInt(assignment.companyPhone),
-      });
+      const docRef = await firebase
+        .firestore()
+        .collection("assignments")
+        .add({
+          ...assignment,
+          pickupDate: new Date(assignment.pickupDate),
+          companyPhone: parseInt(assignment.companyPhone),
+        });
       //if success
       console.log(docRef.id);
       //reset assignment
