@@ -1,6 +1,4 @@
 import styled, { css } from "styled-components";
-import { ToasterContext } from "../context/ToasterContext";
-import Toaster from "./Toaster";
 
 const ButtonStyled = styled.button`
   border: none;
@@ -16,6 +14,7 @@ const ButtonStyled = styled.button`
       css`
         border: 1px solid lightGray;
         background-color: transparent;
+        color: black;
       `
     /*Above is a shortcut that returns instantly, original looks like:
     ${props => {
@@ -26,19 +25,11 @@ const ButtonStyled = styled.button`
   }
 `;
 
-function Button({ loading, label, ...rest }) {
+function Button({ loading, ...rest }) {
   return (
-    <ToasterContext.Consumer>
-      {({ addToast }) => (
-        <ButtonStyled
-          disabled={loading}
-          {...rest}
-          onClick={() => addToast("My toast")} // need to provide a function to run, thus ()
-        >
-          {loading ? "Loading" : label}
-        </ButtonStyled>
-      )}
-    </ToasterContext.Consumer>
+    <ButtonStyled disabled={loading} {...rest}>
+      {loading ? "Loading" : rest.children}
+    </ButtonStyled>
   );
 }
 

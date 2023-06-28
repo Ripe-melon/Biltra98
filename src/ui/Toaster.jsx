@@ -1,26 +1,42 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Wrapper = styled.div`
     position: fixed;
     right: 20px;
     bottom: 20px;
     width 280px;
+`;
 
-    .toast {
-        border-radius: 6px;
-        background: #fefefe;
-        border: #ccc 1px solid;
-        box-shadow: 1px 1px 4px 1px rgba(0,0,0, 0.2);¨
-        padding: 15px;
-        margin-top: 15px;
-    }
+const Toast = styled.div`
+  background: #fefefe;
+  border: #ccc 1px solid;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin-top: 15px;
+
+  ${(props) =>
+    props.type === "success" &&
+    css`
+      background-color: ForestGreen;
+      border: none;
+      color: white;
+    `}
+  ${(props) =>
+    props.type === "error" &&
+    css`
+      background-color: Tomato;
+      border: none;
+      color: white;
+    `}
 `;
 
 function Toaster({ toasts }) {
   return (
     <Wrapper>
       {toasts.map((toast) => (
-        <div className="toast">{toast}</div>
+        <Toast className="toast" type={toast.type}>
+          {toast.text}
+        </Toast>
       ))}
     </Wrapper>
   );
