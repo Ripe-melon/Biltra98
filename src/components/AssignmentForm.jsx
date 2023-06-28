@@ -1,6 +1,65 @@
 import { useState } from "react";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import { Button, Message, Field, Modal } from "../ui/index";
 
-function AssignmentForm(props) {
+function AssignmentForm({ assignment, setAssignment, setToasts }) {
+  const db = firebase.firestore();
+
+  const [loading, setLoading] = useState(false);
+  const [isModal, setIsModal] = useState(false);
+  const [error, setError] = useState(null);
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const docRef = await db.collection("assignments").add({
+        ...assignment,
+        pickupDate: new Date(assignment.pickupDate),
+        companyPhone: parseInt(assignment.companyPhone),
+      });
+      //if success
+      console.log(docRef.id);
+      //reset assignment
+      setAssignment({
+        companyName: "",
+        companyContact: "",
+        companyPhone: "",
+        pickupAdress: "",
+        dropoffAdress: "",
+        pickupDate: "",
+        carReg: "",
+      });
+      setIsModal(false);
+      setToasts(["Successfully saved booking."]);
+
+      //if it throws error, we will catch it
+    } catch (e) {
+      console.error("An error has occured: ", error);
+      setError("An error has occured while saving assignment.");
+    }
+    //for either case we set loading to false
+    setLoading(false);
+  };
+
+  const onChange = (e) => {
+    setAssignment({
+      ...assignment,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  /* Hur det hade sett med kod duplicering:
+  const onCompanyChange = (e) => {
+    setAssignment({
+      ...assignment,
+      companyName: e.target.value
+    })
+  } */
+
+  const modalShow = (v) => setIsModal(v); //possible to pass event like (variabel, e)
+
   return (
     <>
       <div>
