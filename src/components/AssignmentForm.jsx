@@ -3,6 +3,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { Button, Message, Field, Modal } from "../ui/index";
 import { ToasterContext } from "../context/ToasterContext";
+import { useNavigate } from "react-router-dom";
 
 function AssignmentForm() {
   // const db = firebase.firestore(); OBS! NOT NEEDED SINCE USING ONCE.
@@ -10,6 +11,7 @@ function AssignmentForm() {
   const [loading, setLoading] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const [assignment, setAssignment] = useState({
     companyName: "",
@@ -50,6 +52,8 @@ function AssignmentForm() {
         text: "Successfully added booking assignment.",
         type: "success",
       });
+      //redirect to book details
+      navigate(`/assignment/${docRef.id}`);
       //if it throws error, we will catch it
     } catch (e) {
       console.error("An error has occured: ", error);

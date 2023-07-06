@@ -1,19 +1,27 @@
+import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
+
 import AssignmentList from "./components/AssignmentList";
 import AssignmentForm from "./components/AssignmentForm";
 import "./styles.css";
 import { ToasterProvider } from "./context/ToasterContext";
+import AssignmentDetails from "./components/AssignmentDetails";
 
 function App() {
   return (
-    <ToasterProvider>
-      <div className="App">
-        <h1>BOKNINGSSYSTEM för BILTRANSPORTER</h1>
+    <Router>
+      <ToasterProvider>
+        <div className="App">
+          <h1>
+            <Link to="/">BOKNINGSSYSTEM för BILTRANSPORTER</Link>
+          </h1>
 
-        <AssignmentForm />
-
-        <AssignmentList />
-      </div>
-    </ToasterProvider>
+          <Routes>
+            <Route path="/" element={<AssignmentList />} />
+            <Route path="/assignment/:id/*" element={<AssignmentDetails />} />
+          </Routes>
+        </div>
+      </ToasterProvider>
+    </Router>
   );
 }
 

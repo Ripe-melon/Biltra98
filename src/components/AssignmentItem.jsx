@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom";
+
 function AssignmentItem({ assignment }) {
   return (
     <div className="assignment-item">
-      <h4>{assignment.companyName}</h4>
+      <h4>
+        <Link to={`/assignment/${assignment.id}`}>
+          {assignment.companyName}
+        </Link>
+      </h4>
       <span>
         <strong>Datum: </strong>{" "}
         {assignment.pickupDate.toDate().toLocaleDateString()}
