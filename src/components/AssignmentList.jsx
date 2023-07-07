@@ -1,32 +1,44 @@
-function AssignmentList({ assignments}) {
-    return (
-        <div className="assignment-list">
-          <h2>Lista av bokningar</h2>
-          {assignments.map((assignment) => (
-            <div className="assignment-item" key={assignment.id}>
-            <h4>{assignment.companyName}</h4>
-            <span>
-              <strong>Datum: </strong> {assignment.pickupDate.toDate().toLocaleDateString()}
-            </span>
-            <span>
-              <strong>Telefonnummer: </strong>{assignment.companyPhone}
-            </span>{" "}
-            <span>
-              <strong>Kontaktperson: </strong>{assignment.companyContact}
-            </span>
-            <span>
-              <strong>Upphämtningsadress: </strong>{assignment.pickupAdress}
-            </span>
-            <span>
-              <strong>Avlämningsadress: </strong>{assignment.dropoffAdress}
-            </span>
-            <span>
-              <strong>Reg-nummer: </strong>{assignment.carReg}
-            </span>
-          </div>
-          ))}
-        </div>
-    )
+// useEffect allows a functional component to use the event cycle.
+import { useState, useEffect } from "react";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import AssignmentItem from "./AssignmentItem";
+import AssignmentForm from "./AssignmentForm";
+import { Loading } from "../ui";
+
+function AssignmentList() {
+  const [assignments, setAssignments] = useState([]);
+
+  useEffect(() => {
+    const db = firebase.firestore();
+
+    // snapshot is like an iterable object, we can use it to look through our assignment list.
+    (async () => {
+      const snapshot = await db.collection("assignments").get();
+      const assignmentsArray = [];
+      snapshot.forEach((doc) => {
+        assignmentsArray.push({
+          id: doc.id,
+          ...doc.data(),
+        });
+      });
+      setAssignments(assignmentsArray);
+    })();
+  }, []); //useEffect will only run when the props change [].
+
+  return (
+    <div className="assignment-list">
+      <AssignmentForm />
+      <h2>Lista av bokningar</h2>
+      {!assignments.length ? (
+        <Loading />
+      ) : (
+        assignments.map((assignment) => (
+          <AssignmentItem assignment={assignment} key={assignment.id} />
+        ))
+      )}
+    </div>
+  );
 }
 
-export default AssignmentList
+export default AssignmentList;
