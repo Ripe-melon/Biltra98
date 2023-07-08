@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import AssignmentItem from "./AssignmentItem";
-import AssignmentForm from "./AssignmentForm";
+import AddAssignment from "./AddAssignment";
 import { Loading } from "../ui";
 
 function AssignmentList() {
@@ -28,7 +28,7 @@ function AssignmentList() {
 
   return (
     <div className="assignment-list">
-      <AssignmentForm />
+      <AddAssignment />
       <h2>Lista av bokningar</h2>
       {!assignments.length ? (
         <Loading />

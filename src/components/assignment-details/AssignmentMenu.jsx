@@ -22,15 +22,15 @@ function AssignmentMenu({ id }) {
 
   return (
     <StyledUl>
-      <li className={location.pathname === `${baseUrl}` ? "active" : undefined}>
+      <li
+        className={(location.pathname === `${baseUrl}` && "active").toString()}
+      >
         <Link to={`${baseUrl}`}>General information</Link>
       </li>
       <li
-        className={
-          location.pathname === `${baseUrl}/company-contact`
-            ? "active"
-            : undefined
-        }
+        className={(
+          location.pathname === `${baseUrl}/company-contact` && "active"
+        ).toString()}
       >
         <Link to={`${baseUrl}/company-contact`}>Kontaktperson</Link>
       </li>

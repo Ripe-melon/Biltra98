@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-import { useParams, Link, Route, Routes } from "react-router-dom";
+import { useParams, Route, Routes } from "react-router-dom";
 import { Loading } from "../ui";
 import AssignmentContact from "./assignment-details/AssignmentContact";
 import AssignmentGeneral from "./assignment-details/AssignmentGeneral";
@@ -37,11 +37,11 @@ function AssignmentDetails() {
       <Routes>
         <Route
           path="/"
-          element={<AssignmentGeneral assignment={assignment} />}
+          element={<AssignmentGeneral assignment={assignment} id={id} />}
         />
         <Route
           path="company-contact"
-          element={<AssignmentContact assignment={assignment} />}
+          element={<AssignmentContact assignment={assignment} id={id} />}
         />
       </Routes>
     </div>

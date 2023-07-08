@@ -1,7 +1,6 @@
 import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
 
 import AssignmentList from "./components/AssignmentList";
-import AssignmentForm from "./components/AssignmentForm";
 import "./styles.css";
 import { ToasterProvider } from "./context/ToasterContext";
 import AssignmentDetails from "./components/AssignmentDetails";
