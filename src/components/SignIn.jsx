@@ -63,7 +63,7 @@ function SignIn() {
             id="password"
           />
         </Field>
-        <Button type="submit" loading={loading}>
+        <Button variant="primary" type="submit" loading={loading}>
           Sign In
         </Button>
         <Message error={error} type="error" />

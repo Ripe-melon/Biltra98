@@ -1,17 +1,18 @@
 import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
 import SignIn from "./components/SignIn";
 import AssignmentList from "./components/AssignmentList";
-import "./styles.css";
 import { ToasterProvider } from "./context/ToasterContext";
 import AssignmentDetails from "./components/AssignmentDetails";
 import { AuthProvider } from "./context/authContext";
 import Header from "./components/layout/Header";
 import PrivateRoute from "./PrivateRoute";
+import GlobalStyle from "./styling/GlobalStyle";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
+        <GlobalStyle />
         <ToasterProvider>
           <div className="App">
             <Header />
