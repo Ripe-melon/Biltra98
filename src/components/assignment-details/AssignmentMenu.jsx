@@ -5,34 +5,40 @@ const StyledUl = styled.ul`
   list-style: none;
   padding: 0;
   li {
-    padding: 6px;
+    padding: 12px;
     margin: 4px;
     background-color: #f0f0f0;
     display: inline-block;
 
     &.active {
-      background-color: #ccc;
+      background-color: #e3e3e3;
     }
+  }
+`;
+
+const StyledLink = styled(Link)`
+  &:focus {
+    outline: none;
   }
 `;
 
 function AssignmentMenu({ id }) {
   const location = useLocation();
-  const baseUrl = `/assignment/${id}`;
+  const baseUrl = `/bokningar/${id}`;
 
   return (
     <StyledUl>
-      <li className={location.pathname === `${baseUrl}` ? "active" : undefined}>
-        <Link to={`${baseUrl}`}>General information</Link>
+      <li
+        className={(location.pathname === `${baseUrl}` && "active").toString()}
+      >
+        <StyledLink to={`${baseUrl}`}>Generell information</StyledLink>
       </li>
       <li
-        className={
-          location.pathname === `${baseUrl}/company-contact`
-            ? "active"
-            : undefined
-        }
+        className={(
+          location.pathname === `${baseUrl}/kontakt` && "active"
+        ).toString()}
       >
-        <Link to={`${baseUrl}/company-contact`}>Kontaktperson</Link>
+        <StyledLink to={`${baseUrl}/kontakt`}>Kontaktperson</StyledLink>
       </li>
     </StyledUl>
   );

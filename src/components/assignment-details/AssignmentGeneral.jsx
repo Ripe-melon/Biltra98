@@ -1,8 +1,12 @@
-function AssignmentGeneral({ assignment }) {
+import EditAssignment from "../EditAssignment";
+
+function AssignmentGeneral({ id, assignment }) {
   return (
     <>
+      <br />
       <h3>Generell information</h3>
-      <p>{assignment.companyName}</p>
+      <br />
+      <EditAssignment id={id} assignment={assignment} />
     </>
   );
 }

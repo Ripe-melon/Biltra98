@@ -33,8 +33,8 @@ const Toast = styled.div`
 function Toaster({ toasts }) {
   return (
     <Wrapper>
-      {toasts.map((toast) => (
-        <Toast className="toast" type={toast.type}>
+      {toasts.map((toast, i) => (
+        <Toast className="toast" key={i} type={toast.type}>
           {toast.text}
         </Toast>
       ))}

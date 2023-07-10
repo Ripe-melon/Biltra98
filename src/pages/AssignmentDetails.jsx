@@ -2,11 +2,12 @@
 import { useEffect, useState } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-import { useParams, Link, Route, Routes } from "react-router-dom";
+import { useParams, Route, Routes } from "react-router-dom";
 import { Loading } from "../ui";
-import AssignmentContact from "./assignment-details/AssignmentContact";
-import AssignmentGeneral from "./assignment-details/AssignmentGeneral";
-import AssignmentMenu from "./assignment-details/AssignmentMenu";
+import AssignmentContact from "../components/assignment-details/AssignmentContact";
+import AssignmentGeneral from "../components/assignment-details/AssignmentGeneral";
+import AssignmentMenu from "../components/assignment-details/AssignmentMenu";
+import Page from "../ui/Page";
 
 function AssignmentDetails() {
   const { id } = useParams();
@@ -30,21 +31,21 @@ function AssignmentDetails() {
   if (!assignment) return <Loading />;
 
   return (
-    <div>
-      <h2>Assignment details</h2>
+    <Page title="Bokningsdetaljer">
       <AssignmentMenu id={id} />
+      <br />
 
       <Routes>
         <Route
           path="/"
-          element={<AssignmentGeneral assignment={assignment} />}
+          element={<AssignmentGeneral assignment={assignment} id={id} />}
         />
         <Route
-          path="company-contact"
-          element={<AssignmentContact assignment={assignment} />}
+          path="kontakt"
+          element={<AssignmentContact assignment={assignment} id={id} />}
         />
       </Routes>
-    </div>
+    </Page>
   );
 }
 
