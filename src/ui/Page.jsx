@@ -1,12 +1,13 @@
 import Divider from "./Divider";
+import styled from "styled-components";
 
 const Header = styled.div`
   min-height: 38px;
-  padding: 0 24px;
+  padding: 24px 24px;
 `;
 
 const Content = styled.div`
-  padding: 0 24px;
+  padding: 0px 24px;
 `;
 
 function Page({ title, children, ...rest }) {

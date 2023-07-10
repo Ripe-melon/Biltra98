@@ -19,10 +19,10 @@ const GlobalStyle = createGlobalStyle`
         --color-gray-contrast: var(--color-light);
         --color-lightgray: #bbb;
         --color-lightgray-contrast: var(--color-light);
-        --color-primary: #ff6358;
-        --color-primary-rgb: 255,99,88;
+        --color-primary: #DE9156;
+        --color-primary-rgb: 222,145,86;
         --color-primary-contrast: var(--color-light);
-        --color-primary-hover: #e65a50;
+        --color-primary-hover: #b87848;
         --color-secondary: #03a9f4;
         --color-secondary-rgb: 3,169,244;
         --color-secondary-contrast: var(--color-light);
@@ -64,8 +64,8 @@ const GlobalStyle = createGlobalStyle`
         --fsize-9: 44px;
         --fsize-10: 55px;
         --height-input: var(--space-4);
-        --height-button: var(--space-4);
-        --min-width-button: var(--space-4);
+        --height-button: var(--space-7);
+        --min-width-button: var(--space-9);
         --px-button: var(--space-2);
         --navbar-width: 256px;
 

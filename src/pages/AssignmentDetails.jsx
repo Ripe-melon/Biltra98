@@ -7,7 +7,7 @@ import { Loading } from "../ui";
 import AssignmentContact from "../components/assignment-details/AssignmentContact";
 import AssignmentGeneral from "../components/assignment-details/AssignmentGeneral";
 import AssignmentMenu from "../components/assignment-details/AssignmentMenu";
-import Layout from "../components/layout/Layout";
+import Page from "../ui/Page";
 
 function AssignmentDetails() {
   const { id } = useParams();
@@ -31,8 +31,7 @@ function AssignmentDetails() {
   if (!assignment) return <Loading />;
 
   return (
-    <Layout>
-      <h2>Assignment details</h2>
+    <Page title="Assignment details">
       <AssignmentMenu id={id} />
 
       <Routes>
@@ -45,7 +44,7 @@ function AssignmentDetails() {
           element={<AssignmentContact assignment={assignment} id={id} />}
         />
       </Routes>
-    </Layout>
+    </Page>
   );
 }
 

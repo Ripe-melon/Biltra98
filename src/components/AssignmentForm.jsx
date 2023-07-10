@@ -87,7 +87,7 @@ function AssignmentForm({
       </Field>
 
       <div>
-        <Button loading={loading} type="submit">
+        <Button variant="primary" loading={loading} type="submit">
           Save
         </Button>
       </div>

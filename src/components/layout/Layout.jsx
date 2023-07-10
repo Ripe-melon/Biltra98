@@ -2,6 +2,7 @@ import Header from "./Header";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import { useState } from "react";
+import { useAuth } from "../../context/authContext";
 
 // Check grid with inspect, way easier.
 const Grid = styled.div`
@@ -27,17 +28,22 @@ const GridMain = styled.main`
 
 function Layout({ children, ...rest }) {
   const [showNav, setShowNav] = useState(0);
+  const auth = useAuth();
 
   const toggle = () => setShowNav(Number(!showNav));
 
   return (
     <Grid {...rest}>
-      <GridNav>
-        <Navbar visible={showNav} close={toggle} />
-      </GridNav>
-      <GridHeader>
-        <Header toggle={toggle} />
-      </GridHeader>
+      {auth.user && (
+        <>
+          <GridNav>
+            <Navbar visible={showNav} close={toggle} />
+          </GridNav>
+          <GridHeader>
+            <Header toggle={toggle} />
+          </GridHeader>
+        </>
+      )}
       <GridMain>{children}</GridMain>
     </Grid>
   );

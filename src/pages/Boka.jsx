@@ -1,16 +1,13 @@
+import AssignmentForm from "../components/AssignmentForm";
+import Page from "../ui/Page";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ToasterContext } from "../context/ToasterContext";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-import { Button, Modal } from "../ui/index";
-import { ToasterContext } from "../context/ToasterContext";
-import { useNavigate } from "react-router-dom";
-import AssignmentForm from "./AssignmentForm";
 
-function AddAssignment() {
-  // const db = firebase.firestore(); OBS! NOT NEEDED SINCE USING ONCE.
-
+function Boka() {
   const [loading, setLoading] = useState(false);
-  const [isModal, setIsModal] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -57,39 +54,25 @@ function AddAssignment() {
     }
   };
 
-  const modalShow = (v) => setIsModal(v); //possible to pass event like (variabel, e)
-
   return (
-    <ToasterContext.Consumer>
-      {({ addToast }) => (
-        <>
-          <div>
-            <Button
-              variant="primary"
-              onClick={modalShow.bind(this, true)}
-              outline
-            >
-              Lägg till ny bokning
-            </Button>
-          </div>
-
-          <Modal
-            title="Lägg till ny bokning!"
-            show={isModal}
-            close={modalShow.bind(this, false)}
-          >
-            <br />
-            <br />
-            {/* writing {...{exempel, exempel2}} is shortcut for props when the names are the same. */}
-            <AssignmentForm
-              {...{ loading, assignment, setAssignment, error }}
-              onSubmit={onSubmit.bind(this, addToast)}
-            />
-          </Modal>
-        </>
-      )}
-    </ToasterContext.Consumer>
+    <Page title="Boka en ny biltransport.">
+      <ToasterContext.Consumer>
+        {({ addToast }) => (
+          <>
+            <div title="Lägg till ny bokning!">
+              <br />
+              <br />
+              {/* writing {...{exempel, exempel2}} is shortcut for props when the names are the same. */}
+              <AssignmentForm
+                {...{ loading, assignment, setAssignment, error }}
+                onSubmit={onSubmit.bind(this, addToast)}
+              />
+            </div>
+          </>
+        )}
+      </ToasterContext.Consumer>
+    </Page>
   );
 }
 
-export default AddAssignment;
+export default Boka;

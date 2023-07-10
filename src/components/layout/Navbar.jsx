@@ -8,6 +8,7 @@ import {
   mdiFaceAgent,
   mdiCog,
   mdiChartAreaspline,
+  mdiHome,
 } from "@mdi/js";
 import NavLink from "./navbar/NavLink.jsx";
 import { useState } from "react";
@@ -93,37 +94,51 @@ function Navbar(props) {
 
         <div className="navlink-group">
           <NavLink
+            onClick={props.close}
+            iconPath={mdiHome}
+            toPath="/"
+            label="Hem"
+            compact={compact}
+          />
+          <NavLink
+            onClick={props.close}
             iconPath={mdiCarSelect}
             toPath="/boka"
             label="Boka transport"
             compact={compact}
           />
           <NavLink
+            onClick={props.close}
             iconPath={mdiCarConnected}
             toPath="/live"
             label="Spåra transport"
             compact={compact}
           />
           <NavLink
+            onClick={props.close}
             iconPath={mdiCarMultiple}
             toPath="/bokningar"
             label="Bokningar"
             compact={compact}
           />
           <NavLink
+            onClick={props.close}
             iconPath={mdiChartAreaspline}
             toPath="/statistik"
             label="Statistik"
             compact={compact}
           />
         </div>
+
         <NavLink
+          onClick={props.close}
           iconPath={mdiFaceAgent}
           toPath="/support"
           label="Support"
           compact={compact}
         />
         <NavLink
+          onClick={props.close}
           iconPath={mdiCog}
           toPath="/settings"
           label="Inställningar"

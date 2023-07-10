@@ -2,6 +2,7 @@ import { Button, Field, Message } from "../ui";
 import { useState, useEffect } from "react";
 import { useAuth } from "../context/authContext";
 import { useNavigate, useLocation } from "react-router-dom";
+import Page from "../ui/Page";
 
 function SignIn() {
   const navigate = useNavigate();
@@ -42,8 +43,7 @@ function SignIn() {
   };
 
   return (
-    <div>
-      <h2>Sign In</h2>
+    <Page title="Inloggning">
       <form onSubmit={handleSubmit}>
         <Field labelText="Email">
           <input
@@ -68,7 +68,7 @@ function SignIn() {
         </Button>
         <Message error={error} type="error" />
       </form>
-    </div>
+    </Page>
   );
 }
 

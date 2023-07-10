@@ -25,7 +25,8 @@ const StyledLink = styled(Link)`
     line-height: 19px;
     white-space: nowrap;
     opacity: ${(p) => Number(!p.compact)};
-    transition: opacity 0.2s cubic-bezier(0.4, 0, 1, 1);
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 1, 1); //for collapse
+    text-decoration: none;
   }
   &:hover {
     text-decoration: none;
@@ -33,6 +34,7 @@ const StyledLink = styled(Link)`
   }
   &.active  {
     color: var(--color-primary);
+    text-decoration: none;
   }
 `;
 

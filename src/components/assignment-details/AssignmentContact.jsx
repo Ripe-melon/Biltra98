@@ -1,6 +1,7 @@
 function AssignmentContact({ assignment, id }) {
   return (
     <>
+      <br />
       <h3>Kontaktperson:</h3>
       <p>
         {assignment.companyContact
