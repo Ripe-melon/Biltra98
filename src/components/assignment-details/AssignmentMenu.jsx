@@ -5,14 +5,20 @@ const StyledUl = styled.ul`
   list-style: none;
   padding: 0;
   li {
-    padding: 6px;
+    padding: 12px;
     margin: 4px;
     background-color: #f0f0f0;
     display: inline-block;
 
     &.active {
-      background-color: #ccc;
+      background-color: #e3e3e3;
     }
+  }
+`;
+
+const StyledLink = styled(Link)`
+  &:focus {
+    outline: none;
   }
 `;
 
@@ -25,14 +31,14 @@ function AssignmentMenu({ id }) {
       <li
         className={(location.pathname === `${baseUrl}` && "active").toString()}
       >
-        <Link to={`${baseUrl}`}>General information</Link>
+        <StyledLink to={`${baseUrl}`}>Generell information</StyledLink>
       </li>
       <li
         className={(
-          location.pathname === `${baseUrl}/company-contact` && "active"
+          location.pathname === `${baseUrl}/kontakt` && "active"
         ).toString()}
       >
-        <Link to={`${baseUrl}/company-contact`}>Kontaktperson</Link>
+        <StyledLink to={`${baseUrl}/kontakt`}>Kontaktperson</StyledLink>
       </li>
     </StyledUl>
   );

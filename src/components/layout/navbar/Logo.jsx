@@ -15,6 +15,9 @@ const StyledLink = styled(Link)`
   &:hover {
     text-decoration: none;
   }
+  &:focus {
+    outline: none;
+  }
 `;
 
 function Logo(props) {

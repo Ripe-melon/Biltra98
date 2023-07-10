@@ -66,12 +66,12 @@ const GlobalStyle = createGlobalStyle`
         --height-input: var(--space-4);
         --height-button: var(--space-7);
         --min-width-button: var(--space-9);
-        --px-button: var(--space-2);
+        --px-button: var(--space-4);
         --navbar-width: 256px;
 
         @media(max-width: ${breakpoints.desktop}) {
-            --height-button: calc(var(--space-4) + 8px);
-            --px-button: calc(var(--space-2) + 8px);
+            --height-button: calc(var(--space-7) + 8px);
+            --px-button: calc(var(--space-4) + 8px);
         }
     }
 

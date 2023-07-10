@@ -29,6 +29,9 @@ const Grid = styled.div`
   }
   button {
     white-space: nowrap;
+    height: 32px;
+    padding: 0px 18px;
+    font-size: 12px;
   }
   &:first-child {
     font-size: var(--fsize-5);
@@ -56,9 +59,9 @@ function Header({ toggle }) {
         <div className="mid">
           <Logo />
         </div>
-        <div className="username">{`Welcome, ${auth.user.email}`}</div>
+        <div className="username">{`Välkommen, ${auth.user.email}`}</div>
         <div>
-          <Button onClick={async () => await auth.signOut()}>Sign Out</Button>
+          <Button onClick={async () => await auth.signOut()}>Logga ut</Button>
         </div>
       </Grid>
     </>

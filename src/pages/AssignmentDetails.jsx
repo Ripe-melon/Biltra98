@@ -31,8 +31,9 @@ function AssignmentDetails() {
   if (!assignment) return <Loading />;
 
   return (
-    <Page title="Assignment details">
+    <Page title="Bokningsdetaljer">
       <AssignmentMenu id={id} />
+      <br />
 
       <Routes>
         <Route
@@ -40,7 +41,7 @@ function AssignmentDetails() {
           element={<AssignmentGeneral assignment={assignment} id={id} />}
         />
         <Route
-          path="company-contact"
+          path="kontakt"
           element={<AssignmentContact assignment={assignment} id={id} />}
         />
       </Routes>

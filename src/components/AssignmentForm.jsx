@@ -88,7 +88,7 @@ function AssignmentForm({
 
       <div>
         <Button variant="primary" loading={loading} type="submit">
-          Save
+          Spara
         </Button>
       </div>
       <Message error={error} type="error" />

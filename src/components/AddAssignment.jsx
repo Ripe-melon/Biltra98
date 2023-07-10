@@ -74,7 +74,7 @@ function AddAssignment() {
           </div>
 
           <Modal
-            title="Lägg till ny bokning!"
+            title="Lägg till ny bokning."
             show={isModal}
             close={modalShow.bind(this, false)}
           >

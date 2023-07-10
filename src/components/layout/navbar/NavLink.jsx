@@ -1,6 +1,7 @@
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 import Icon from "@mdi/react";
+import { breakpoints as bp } from "../../../styling/GlobalStyle";
 
 const StyledLink = styled(Link)`
   min-height: 56px;
@@ -27,6 +28,9 @@ const StyledLink = styled(Link)`
     opacity: ${(p) => Number(!p.compact)};
     transition: opacity 0.2s cubic-bezier(0.4, 0, 1, 1); //for collapse
     text-decoration: none;
+    @media (max-width: ${bp.desktop}) {
+      opacity: 1;
+    }
   }
   &:hover {
     text-decoration: none;

@@ -28,8 +28,9 @@ function AssignmentList() {
   }, []); //useEffect will only run when the props change [].
 
   return (
-    <Page title="Bokningslista" className="assignment-list">
+    <Page title="Bokningslista." className="assignment-list">
       <AddAssignment />
+      <p>Det är möjligt att klicka på företagsnamn för att ändra en bokning.</p>
       <br />
       <br />
       {!assignments.length ? (
