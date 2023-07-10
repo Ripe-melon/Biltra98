@@ -36,6 +36,9 @@ const StyledLink = styled(Link)`
     color: var(--color-primary);
     text-decoration: none;
   }
+  &:focus {
+    outline: none;
+  }
 `;
 
 function NavLink({ children, iconPath, toPath, label, ...rest }) {
