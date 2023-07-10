@@ -18,7 +18,7 @@ const StyledUl = styled.ul`
 
 function AssignmentMenu({ id }) {
   const location = useLocation();
-  const baseUrl = `/assignment/${id}`;
+  const baseUrl = `/bokningar/${id}`;
 
   return (
     <StyledUl>

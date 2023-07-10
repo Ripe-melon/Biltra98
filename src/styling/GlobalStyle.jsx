@@ -50,7 +50,9 @@ const GlobalStyle = createGlobalStyle`
         --space-8: 60px;
         --space-9: 80px;
         --space-10: 110px;
-        --primary-font: 'Roboto', sans-serif;
+        --primary-font: 'Proxima Nova', sans-serif;
+        --logo-font: 'Futura PT cond bold', sans-serif;
+        --roboto-font: 'Roboto', sans-serif;
         --fsize-1: 8px;
         --fsize-2: 9px;
         --fsize-3: 11px;
@@ -73,10 +75,32 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    @font-face {
+        font-family: 'Futura PT bold';
+        src: url('/fonts/futura-pt-bold.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Futura PT cond bold';
+        src: url('/fonts/futura-pt-cond-extra-bold.otf') format('opentype');
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Proxima Nova';
+        src: url('/fonts/proxima-nova-regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
     ${resetStyle}
 
     body {
-        font-size: var(--fsize-3);
+        font-size: var(--fsize-4);
         font-family: var(--primary-font);
         background-color: var(--color-light);
         color: var(--color-dark);

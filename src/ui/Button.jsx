@@ -26,7 +26,7 @@ const ButtonStyled = styled.button`
       css`
         border-color: var(--color-${(p) => p.variant || "light"});
         background-color: transparent;
-        color: var(--color-gray);
+        color: var(--color-${(p) => p.variant || "light"});
 
         &:hover {
           background-color: var(--color-${(p) => p.variant || "light"});

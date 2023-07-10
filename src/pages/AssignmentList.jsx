@@ -2,9 +2,10 @@
 import { useState, useEffect } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-import AssignmentItem from "./AssignmentItem";
-import AddAssignment from "./AddAssignment";
+import AssignmentItem from "../components/AssignmentItem";
+import AddAssignment from "../components/AddAssignment";
 import { Loading } from "../ui";
+import Layout from "../components/layout/Layout";
 
 function AssignmentList() {
   const [assignments, setAssignments] = useState([]);
@@ -27,7 +28,7 @@ function AssignmentList() {
   }, []); //useEffect will only run when the props change [].
 
   return (
-    <div className="assignment-list">
+    <Layout className="assignment-list">
       <AddAssignment />
       <h2>Lista av bokningar</h2>
       {!assignments.length ? (
@@ -37,7 +38,7 @@ function AssignmentList() {
           <AssignmentItem assignment={assignment} key={assignment.id} />
         ))
       )}
-    </div>
+    </Layout>
   );
 }
 

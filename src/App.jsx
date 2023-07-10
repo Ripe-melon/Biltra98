@@ -1,10 +1,10 @@
 import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
-import SignIn from "./components/SignIn";
-import AssignmentList from "./components/AssignmentList";
+import SignIn from "./pages/SignIn";
+import Home from "./pages/Home";
+import AssignmentList from "./pages/AssignmentList";
 import { ToasterProvider } from "./context/ToasterContext";
-import AssignmentDetails from "./components/AssignmentDetails";
+import AssignmentDetails from "./pages/AssignmentDetails";
 import { AuthProvider } from "./context/authContext";
-import Header from "./components/layout/Header";
 import PrivateRoute from "./PrivateRoute";
 import GlobalStyle from "./styling/GlobalStyle";
 
@@ -15,12 +15,17 @@ function App() {
         <GlobalStyle />
         <ToasterProvider>
           <div className="App">
-            <Header />
-
             <Routes>
-              <Route path="/" element={<h2>Welcome to Biltra</h2>} />
               <Route
-                path="/assignments" //PROTECTED
+                path="/" //PROTECTED
+                element={
+                  <PrivateRoute>
+                    <Home />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/bokningar" //PROTECTED
                 element={
                   <PrivateRoute>
                     <AssignmentList />
@@ -28,7 +33,7 @@ function App() {
                 }
               />
               <Route
-                path="/assignment/:id/*" //PROTECTED
+                path="/bokningar/:id/*" //PROTECTED
                 element={
                   <PrivateRoute>
                     <AssignmentDetails />

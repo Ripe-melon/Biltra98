@@ -4,9 +4,10 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { useParams, Route, Routes } from "react-router-dom";
 import { Loading } from "../ui";
-import AssignmentContact from "./assignment-details/AssignmentContact";
-import AssignmentGeneral from "./assignment-details/AssignmentGeneral";
-import AssignmentMenu from "./assignment-details/AssignmentMenu";
+import AssignmentContact from "../components/assignment-details/AssignmentContact";
+import AssignmentGeneral from "../components/assignment-details/AssignmentGeneral";
+import AssignmentMenu from "../components/assignment-details/AssignmentMenu";
+import Layout from "../components/layout/Layout";
 
 function AssignmentDetails() {
   const { id } = useParams();
@@ -30,7 +31,7 @@ function AssignmentDetails() {
   if (!assignment) return <Loading />;
 
   return (
-    <div>
+    <Layout>
       <h2>Assignment details</h2>
       <AssignmentMenu id={id} />
 
@@ -44,7 +45,7 @@ function AssignmentDetails() {
           element={<AssignmentContact assignment={assignment} id={id} />}
         />
       </Routes>
-    </div>
+    </Layout>
   );
 }
 

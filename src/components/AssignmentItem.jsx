@@ -4,9 +4,7 @@ function AssignmentItem({ assignment }) {
   return (
     <div className="assignment-item">
       <h4>
-        <Link to={`/assignment/${assignment.id}`}>
-          {assignment.companyName}
-        </Link>
+        <Link to={`/bokningar/${assignment.id}`}>{assignment.companyName}</Link>
       </h4>
       <span>
         <strong>Datum: </strong>{" "}

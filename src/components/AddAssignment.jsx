@@ -64,7 +64,11 @@ function AddAssignment() {
       {({ addToast }) => (
         <>
           <div>
-            <Button onClick={modalShow.bind(this, true)} outline>
+            <Button
+              variant="primary"
+              onClick={modalShow.bind(this, true)}
+              outline
+            >
               Lägg till ny bokning
             </Button>
           </div>
