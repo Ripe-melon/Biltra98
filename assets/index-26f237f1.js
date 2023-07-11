@@ -208,7 +208,7 @@ Error generating stack: `+s.message+`
       color: white;
     `}
 `;function TO({toasts:t}){return w.jsx(EO,{children:t.map((e,n)=>w.jsx(SO,{className:"toast",type:e.type,children:e.text},n))})}function Tv(){return"Loading"}const kO=Ie.div`
-  margin: 30px 0 5px 0;
+  margin: 30px 0 0px 0;
   height: 2px;
   background-color: #f0f0f0;
 `;function bO(){return w.jsx(kO,{})}/**
