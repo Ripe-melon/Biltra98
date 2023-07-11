@@ -1,15 +1,6 @@
 import styled from "styled-components";
 import { breakpoints as bp } from "../../styling/GlobalStyle";
 import Backdrop from "../../ui/Backdrop";
-import {
-  mdiCarMultiple,
-  mdiCarConnected,
-  mdiCarSelect,
-  mdiFaceAgent,
-  mdiCog,
-  mdiChartAreaspline,
-  mdiHome,
-} from "@mdi/js";
 import NavLink from "./navbar/NavLink.jsx";
 import { useState } from "react";
 import NavToggle from "./navbar/NavToggle";
@@ -95,56 +86,57 @@ function Navbar(props) {
         <div className="navlink-group">
           <NavLink
             onClick={props.close}
-            iconPath={mdiHome}
+            iconPath="home"
             toPath="/"
             label="Hem"
             compact={compact}
           />
           <NavLink
             onClick={props.close}
-            iconPath={mdiCarSelect}
+            iconPath="carSelect"
             toPath="/boka"
             label="Boka transport"
             compact={compact}
           />
           <NavLink
             onClick={props.close}
-            iconPath={mdiCarConnected}
+            iconPath="carConnected"
             toPath="/live"
             label="Spåra transport"
             compact={compact}
           />
           <NavLink
             onClick={props.close}
-            iconPath={mdiCarMultiple}
+            iconPath="carMultiple"
             toPath="/bokningar"
             label="Bokningar"
             compact={compact}
           />
           <NavLink
             onClick={props.close}
-            iconPath={mdiChartAreaspline}
+            iconPath="chartAreaspline"
             toPath="/statistik"
             label="Statistik"
             compact={compact}
           />
         </div>
-
-        <NavLink
-          onClick={props.close}
-          iconPath={mdiFaceAgent}
-          toPath="/support"
-          label="Support"
-          compact={compact}
-        />
-        <NavLink
-          onClick={props.close}
-          iconPath={mdiCog}
-          toPath="/settings"
-          label="Inställningar"
-          compact={compact}
-        />
-        <NavToggle compact={compact} setCompact={setCompact} />
+        <div>
+          <NavLink
+            onClick={props.close}
+            iconPath="faceAgent"
+            toPath="/support"
+            label="Support"
+            compact={compact}
+          />
+          <NavLink
+            onClick={props.close}
+            iconPath="cog"
+            toPath="/settings"
+            label="Inställningar"
+            compact={compact}
+          />
+          <NavToggle compact={compact} setCompact={setCompact} />
+        </div>
       </StyledNav>
     </>
   );

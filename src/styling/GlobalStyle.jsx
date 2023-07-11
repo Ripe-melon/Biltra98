@@ -77,21 +77,21 @@ const GlobalStyle = createGlobalStyle`
 
     @font-face {
         font-family: 'Futura PT bold';
-        src: url('/fonts/futura-pt-bold.ttf') format('truetype');
+        src: url('/Biltra98/futura-pt-bold.ttf') format('truetype');
         font-weight: bold;
         font-style: normal;
         font-display: swap;
     }
     @font-face {
         font-family: 'Futura PT cond bold';
-        src: url('/fonts/futura-pt-cond-extra-bold.otf') format('opentype');
+        src: url('/Biltra98/fonts/futura-pt-cond-extra-bold.otf') format('opentype');
         font-weight: 800;
         font-style: normal;
         font-display: swap;
     }
     @font-face {
         font-family: 'Proxima Nova';
-        src: url('/fonts/proxima-nova-regular.ttf') format('truetype');
+        src: url('/Biltra98/fonts/proxima-nova-regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
         font-display: swap;

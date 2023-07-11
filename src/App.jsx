@@ -13,7 +13,7 @@ import Layout from "./components/layout/Layout";
 function App() {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename="/Biltra98/">
         <GlobalStyle />
         <ToasterProvider>
           <Layout>

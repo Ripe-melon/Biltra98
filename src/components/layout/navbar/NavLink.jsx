@@ -1,7 +1,7 @@
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
-import Icon from "@mdi/react";
 import { breakpoints as bp } from "../../../styling/GlobalStyle";
+import Icon from "../../../ui/Icon";
 
 const StyledLink = styled(Link)`
   min-height: 56px;
@@ -51,7 +51,7 @@ function NavLink({ children, iconPath, toPath, label, ...rest }) {
       {children || (
         <>
           <i>
-            <Icon path={iconPath} />
+            <Icon color="rgba(255, 255, 255, 0.7)" iconName={iconPath} />
           </i>
           <span className="label">{label}</span>
         </>

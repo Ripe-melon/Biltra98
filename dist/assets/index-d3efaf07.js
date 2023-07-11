@@ -5924,21 +5924,21 @@ textarea {
 
     @font-face {
         font-family: 'Futura PT bold';
-        src: url('/fonts/futura-pt-bold.ttf') format('truetype');
+        src: url('/Biltra98/futura-pt-bold.ttf') format('truetype');
         font-weight: bold;
         font-style: normal;
         font-display: swap;
     }
     @font-face {
         font-family: 'Futura PT cond bold';
-        src: url('/fonts/futura-pt-cond-extra-bold.otf') format('opentype');
+        src: url('/Biltra98/fonts/futura-pt-cond-extra-bold.otf') format('opentype');
         font-weight: 800;
         font-style: normal;
         font-display: swap;
     }
     @font-face {
         font-family: 'Proxima Nova';
-        src: url('/fonts/proxima-nova-regular.ttf') format('truetype');
+        src: url('/Biltra98/fonts/proxima-nova-regular.ttf') format('truetype');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -6199,7 +6199,7 @@ textarea {
   grid-area: header;
 `,l8=Ie.main`
   grid-area: main;
-`;function u8({children:t,...e}){const[n,r]=x.useState(0),i=Wf(),s=()=>r(+!n);return w.jsxs(s8,{...e,children:[i.user&&w.jsxs(w.Fragment,{children:[w.jsx(o8,{children:w.jsx(i8,{visible:n,close:s})}),w.jsx(a8,{children:w.jsx(Jz,{toggle:s})})]}),w.jsx(l8,{children:t})]})}function c8(){return w.jsx(fz,{children:w.jsxs(pP,{children:[w.jsx($z,{}),w.jsx(vz,{children:w.jsx(u8,{children:w.jsxs(uk,{children:[w.jsx(ti,{path:"/",element:w.jsx(Vc,{children:w.jsx(yz,{})})}),w.jsx(ti,{path:"/boka",element:w.jsx(Vc,{children:w.jsx(wz,{})})}),w.jsx(ti,{path:"/bokningar",element:w.jsx(Vc,{children:w.jsx(Cz,{})})}),w.jsx(ti,{path:"/bokningar/:id/*",element:w.jsx(Vc,{children:w.jsx(Pz,{})})}),w.jsx(ti,{path:"/signin",element:w.jsx(gz,{})})]})})})]})})}/**
+`;function u8({children:t,...e}){const[n,r]=x.useState(0),i=Wf(),s=()=>r(+!n);return w.jsxs(s8,{...e,children:[i.user&&w.jsxs(w.Fragment,{children:[w.jsx(o8,{children:w.jsx(i8,{visible:n,close:s})}),w.jsx(a8,{children:w.jsx(Jz,{toggle:s})})]}),w.jsx(l8,{children:t})]})}function c8(){return w.jsx(fz,{children:w.jsxs(pP,{basename:"/Biltra98/",children:[w.jsx($z,{}),w.jsx(vz,{children:w.jsx(u8,{children:w.jsxs(uk,{children:[w.jsx(ti,{path:"/",element:w.jsx(Vc,{children:w.jsx(yz,{})})}),w.jsx(ti,{path:"/boka",element:w.jsx(Vc,{children:w.jsx(wz,{})})}),w.jsx(ti,{path:"/bokningar",element:w.jsx(Vc,{children:w.jsx(Cz,{})})}),w.jsx(ti,{path:"/bokningar/:id/*",element:w.jsx(Vc,{children:w.jsx(Pz,{})})}),w.jsx(ti,{path:"/signin",element:w.jsx(gz,{})})]})})})]})})}/**
  * @license
  * Copyright 2019 Google LLC
  *
