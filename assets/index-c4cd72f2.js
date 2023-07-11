@@ -6083,8 +6083,8 @@ textarea {
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1);
 
   i {
-    min-height: 22px;
-    min-width: 22px;
+    height: 22px;
+    width: 22px;
     font-size: 18px;
     display: flex;
     align-items: center;
