@@ -136,6 +136,7 @@ function Navbar(props) {
             compact={compact}
           />
           <NavToggle compact={compact} setCompact={setCompact} />
+          <div className="blank-space" />
         </div>
       </StyledNav>
     </>

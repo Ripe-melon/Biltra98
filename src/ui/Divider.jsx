@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  margin: 30px 0 30px 0;
+  margin: 30px 0 0px 0;
   height: 2px;
   background-color: #f0f0f0;
 `;

@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Header = styled.div`
   min-height: 38px;
   padding: 24px 24px;
+  margin: 10;
 `;
 
 const Content = styled.div`

@@ -14,13 +14,16 @@ function AddAssignment() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
+  const today = new Date();
+  const date = today.toISOString().slice(0, 10);
+
   const assignmentObj = {
     companyName: "",
     companyContact: "",
     companyPhone: "",
     pickupAdress: "",
     dropoffAdress: "",
-    pickupDate: "",
+    pickupDate: date,
     carReg: "",
   };
 
