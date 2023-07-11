@@ -5936,13 +5936,6 @@ textarea {
         font-style: normal;
         font-display: swap;
     }
-    @font-face {
-        font-family: 'Proxima Nova';
-        src: url('/fonts/proxima-nova-regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
 
     ${Oz}
 
